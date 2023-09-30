@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resource :relationships, only: [:create, :destroy]
     get 'following_users' => 'relationships#following_users', as: 'followings'
     get 'follower_users' => 'relationships#follower_users', as: 'followers'
+    get "search" => "users#search"
   end
 
   resources :messages, only: [:create]
