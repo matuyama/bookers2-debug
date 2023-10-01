@@ -85,5 +85,5 @@ Rails.application.configure do
    authentication:       'login',
    enable_starttls_auto:  true
   }
-  end
+
 end
