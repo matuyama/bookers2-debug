@@ -9,23 +9,28 @@ class GroupsController < ApplicationController
   end
 
   def show
+    
     @book = Book.new
     @group = Group.find(params[:id])
     @user = User.find(params[:id])
+  end
+
+  def new
+    @group = Group.new
   end
 
   def create
     @group = Group.new(group_params)
     @group.owner_id = current_user.id
     if @group.save
-      redirect_to group_path, method: :post
+      redirect_to groups_path, method: :post
     else
       render 'new'
     end
   end
 
     def edit
-      
+
     end
 
     private

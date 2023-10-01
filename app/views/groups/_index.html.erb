@@ -4,6 +4,7 @@
       <th></th>
       <th>グループ名</th>
       <th>紹介文</th>
+      <th>メンバー数</th>
       <th class="3"></th>
     </tr>
   </thead>
@@ -11,10 +12,10 @@
     <% groups.each do |group| %>
       <tr>
         <td>
-          <% if group._image.attached? %>
+          <% if group.group_image.attached? %>
             <%= image_tag group.group_image,size:"50x50" %>
           <% else %>
-            <%= image_tag 'no-image', size:"50x50" %>
+            <%= image_tag 'no_image', size: "50x50" %>
           <% end %>
         </td>
         <td><%= link_to group.name, group_path(group) %></td>
