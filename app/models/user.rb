@@ -55,6 +55,8 @@ class User < ApplicationRecord
   validates :introduction, length: {maximum: 50 }
 
   has_many :view_counts, dependent: :destroy
+  
+  has_many :group_users, dependent: :destroy
 
   def get_profile_image
     (profile_image.attached?) ? profile_image : 'no_image.jpg'
