@@ -21,6 +21,7 @@
         </td>
         <td><%= link_to "コメント数:#{book.book_comments.count}", book_path(book)  %></td>
         <td>閲覧数: <%= book.view_counts.count %></td>
+        <td><%= render "books/static_rate", book: book %></td>
       </tr>
     <% end %>
   </tbody>
