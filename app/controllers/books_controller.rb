@@ -22,6 +22,13 @@ class BooksController < ApplicationController
     @books = Book.includes(:favorited_users).
       sort_by{|x|
       x.favorited_users.includes(:favorites).where(created_at: from...to).size}.reverse
+    if params[:latest]
+      @books = Book.latest
+    elsif params[:old]
+      @books = Book.old
+    elsif params[:star_count]
+      @books = Book.star_count
+    end
   end
 
   def create
